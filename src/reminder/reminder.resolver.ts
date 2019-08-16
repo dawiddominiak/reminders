@@ -1,21 +1,15 @@
 import { Query, Resolver } from "@nestjs/graphql";
 import { Reminder } from "@reminder/reminder.dto";
+import { ReminderService } from "@reminder/reminder.service";
 
 @Resolver("Reminder")
 export class ReminderResolver {
+  constructor(private readonly reminderService: ReminderService) {}
+
   @Query((returns) => [Reminder], { name: "reminders", nullable: true })
-  public getReminders(): Reminder[] {
-    const fixtureReminder = new Reminder();
+  public async getReminders(): Promise<Reminder[]> {
+    const reminders = await this.reminderService.list();
 
-    Object.assign(fixtureReminder, {
-      uuid: "test uuid",
-      description: "test reminder",
-      maturityTime: "maturity time",
-      alertTime: "alertTime",
-    });
-
-    return [
-      fixtureReminder,
-    ];
+    return reminders.map(entity => Object.assign(new Reminder(), entity));
   }
 }

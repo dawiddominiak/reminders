@@ -20,9 +20,10 @@
     "outDir": "dist/src",
     "baseUrl": ".",
     "paths": {
+      "@app/*": ["src/*"],
+      "@common/*": ["src/common/*"],
       "@database/*": ["src/database/*"],
       "@reminder/*": ["src/reminder/*"],
-      "@app/*": ["src/*"],
     }
   }
 }
