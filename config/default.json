@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "contact": {
+    "email": "poczta@dawiddominiak.pl"
+  },
+  "license": {
+    "name": "Proprietary"
+  },
+  "app": {
+    "port": 8080,
+    "graphQl": {
+      "typePaths": "/tmp/schema.gql"
+    }
+  },
+  "database": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "lookally",
+    "password": "lookally",
+    "database": "lookally"
+  },
+  "env": "DEV"
+}

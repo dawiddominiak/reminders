@@ -1,0 +1,16 @@
+{
+  "app": {
+    "port": "PORT",
+    "graphQl": {
+      "typePaths": "APP_GRAPHQL_TYPE_PATH"
+    }
+  },
+  "database": {
+    "host": "DATABASE_HOST",
+    "port": "DATABASE_PORT",
+    "username": "DATABASE_USERNAME",
+    "password": "DATABASE_PASSWORD",
+    "database": "DATABASE_NAME"
+  },
+  "env": "NODE_ENV"
+}
